@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Renta de camionetas</title>
+  <title</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -17,18 +17,61 @@
   </header>
 
   <section class="hero">
-    <h1>Las mejores camionetas en renta</h1>
+    <h1>Transporte de personal</h1>
     <p>Disfruta de un viaje sin preocupaciones con nuestros choferes profesionales y camionetas cómodas.</p>
-    <img src="https://via.placeholder.com/800x300?text=Camionetas" alt="Camionetas">
+   <!-- Contenedor para las imágenes -->
+<div class="imagenes-camionetas">
+  <img src="nv1.jpg" alt="Camioneta Nv1" />
+  <img src="nv2.jpg" alt="Camioneta Nv2" />
+  <img src="nv3.jpg" alt="Camioneta Nv3" />
+</div>
+
+<style>
+  .imagenes-camionetas {
+    display: flex;              /* para alinear imágenes en fila */
+    gap: 20px;                 /* espacio entre imágenes */
+    justify-content: center;   /* centrar las imágenes */
+    flex-wrap: wrap;           /* que se ajusten a pantallas pequeñas */
+    padding: 20px 0;
+  }
+  
+  .imagenes-camionetas img {
+    max-width: 300px;          /* tamaño máximo ancho */
+    width: 100%;               /* que ocupe todo el ancho disponible */
+    height: auto;              /* mantener proporción original */
+    border-radius: 10px;       /* bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra sutil */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+
+  .imagenes-camionetas img:hover {
+    transform: scale(1.05);    /* efecto zoom al pasar mouse */
+  }
+
+  /* Opcional: para móviles, las imágenes se ponen en columna */
+  @media (max-width: 600px) {
+    .imagenes-camionetas {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .imagenes-camionetas img {
+      max-width: 90vw;
+      margin-bottom: 20px;
+    }
+  }
+</style>
+
   </section>
 
   <section class="form-section">
-    <h2>Renta de camionetas</h2>
+    <h2>Renta unidades </h2>
     <form action="https://formsubmit.co/transvehi@gmail.com" method="POST">
       <label for="camioneta">Selecciona tu Camioneta:</label>
       <select id="camioneta" name="camioneta" required>
         <option value="" disabled selected>Por favor, selecciona</option>
-        <option value="sprinter">Nissan Nv equipada y amplia (19 pax)</option>
+        <option value="sprinter">Nissan Nv equipada y amplia (17 pax)</option>
         <option value="hiace">Toyota Hiace</option>
       </select>
 
