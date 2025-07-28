@@ -27,4 +27,22 @@
     <form action="https://formsubmit.co/transvehi@gmail.com" method="POST">
       <label for="camioneta">Selecciona tu Camioneta:</label>
       <select id="camioneta" name="camioneta" required>
-        <option value="">
+        <option value="" disabled selected>Por favor, selecciona</option>
+        <option value="sprinter">Nissan Nv equipada y amplia (19 pax)</option>
+        <option value="hiace">Toyota Hiace</option>
+      </select>
+
+      <label for="salida">Lugar de Salida:</label>
+      <input type="text" id="salida" name="salida" placeholder="Ej. CDMX, Toluca..." required>
+      
+      <label for="telefono">Número telefónico:</label>
+      <input type="tel" id="telefono" name="telefono" placeholder="Ej. 5512345678" required pattern="[0-9]{10}" title="Ingresa un número de 10 dígitos sin espacios ni símbolos">
+
+      <button type="submit">Cotizar</button>
+    </form>
+  </section>
+
+  <a href="https://wa.me/5544985161" class="whatsapp" target="_blank">💬 WhatsApp</a>
+
+</body>
+</html>
