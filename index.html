@@ -96,12 +96,19 @@
       font-weight: 500;
     }
 
-    input, select {
+    input, select, textarea {
       width: 100%;
       padding: 10px;
       margin-top: 5px;
       border-radius: 8px;
       border: 1px solid #ccc;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
     }
 
     button[type="submit"] {
@@ -130,7 +137,7 @@
       padding: 15px;
       border-radius: 10px;
       box-shadow: 0 0 8px rgba(0,0,0,0.05);
-      display: none; /* Oculto por defecto */
+      display: none;
     }
 
     .whatsapp {
@@ -191,11 +198,16 @@
 
       <label for="salida">Lugar de Salida:</label>
       <input type="text" id="salida" name="Lugar de salida" placeholder="Ej. CDMX, Toluca..." required>
-      
+
+      <label for="fecha">¿Qué día o días necesitarás el servicio?</label>
+      <input type="date" id="fecha" name="Fecha del servicio" required>
+
       <label for="telefono">Número telefónico:</label>
       <input type="tel" id="telefono" name="Teléfono" placeholder="Ej. 5512345678" required pattern="[0-9]{10}" title="Ingresa un número de 10 dígitos sin espacios ni símbolos">
 
-      <!-- Sin CAPTCHA, sin redirección -->
+      <label for="aclaracion">¿Deseas aclarar algo o dar detalles adicionales? (Opcional)</label>
+      <textarea id="aclaracion" name="Aclaraciones" placeholder="Escribe aquí tus notas, necesidades especiales, etc."></textarea>
+
       <input type="hidden" name="_captcha" value="false">
 
       <button type="submit">Cotizar</button>
