@@ -3,70 +3,164 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>TransVehi - Renta de Transporte</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #f1f9ff, #dff1ff);
+    }
+
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .contact-info span {
+      margin-right: 20px;
+    }
+
+    .btn-cotiza {
+      background-color: white;
+      color: #007bff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+
+    .imagenes-camionetas {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+
+    .imagenes-camionetas img {
+      max-width: 300px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .imagenes-camionetas img:hover {
+      transform: scale(1.05);
+    }
+
+    .form-section {
+      padding: 40px 20px;
+      background-color: #ffffff;
+      text-align: center;
+    }
+
+    .form-section h2 {
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      text-align: left;
+      font-weight: 500;
+    }
+
+    input, select, button {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button[type="submit"] {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .imagenes-camionetas img {
+        max-width: 90vw;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <header>
     <div class="contact-info">
       <span>📧 transvehi@gmail.com</span>
-      <span>📞 55 4498 5161 </span>
+      <span>📞 55 4498 5161</span>
     </div>
-    <button class="btn-cotiza">🚐 COTIZA TU VIAJE</button>
+    <a href="#cotiza" class="btn-cotiza">🚐 COTIZA TU VIAJE</a>
   </header>
 
   <section class="hero">
-    <h1>Transporte de personal</h1>
-    <p>Disfruta de un viaje sin preocupaciones con nuestros choferes profesionales y camionetas cómodas.</p>
-   <!-- Contenedor para las imágenes -->
-<div class="imagenes-camionetas">
-  <img src="nv1.jpg" alt="Camioneta Nv1" />
-  <img src="nv2.jpg" alt="Camioneta Nv2" />
-  <img src="nv3.jpg" alt="Camioneta Nv3" />
-</div>
-
-<style>
-  .imagenes-camionetas {
-    display: flex;              /* para alinear imágenes en fila */
-    gap: 20px;                 /* espacio entre imágenes */
-    justify-content: center;   /* centrar las imágenes */
-    flex-wrap: wrap;           /* que se ajusten a pantallas pequeñas */
-    padding: 20px 0;
-  }
-  
-  .imagenes-camionetas img {
-    max-width: 300px;          /* tamaño máximo ancho */
-    width: 100%;               /* que ocupe todo el ancho disponible */
-    height: auto;              /* mantener proporción original */
-    border-radius: 10px;       /* bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra sutil */
-    transition: transform 0.3s ease;
-    cursor: pointer;
-  }
-
-  .imagenes-camionetas img:hover {
-    transform: scale(1.05);    /* efecto zoom al pasar mouse */
-  }
-
-  /* Opcional: para móviles, las imágenes se ponen en columna */
-  @media (max-width: 600px) {
-    .imagenes-camionetas {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .imagenes-camionetas img {
-      max-width: 90vw;
-      margin-bottom: 20px;
-    }
-  }
-</style>
-
+    <h1>Transporte de Personal</h1>
+    <p>Viaja con confianza, seguridad y comodidad en cada trayecto.</p>
+    <div class="imagenes-camionetas">
+      <img src="nv1.jpg" alt="Camioneta Nv1" />
+      <img src="nv2.jpg" alt="Camioneta Nv2" />
+      <img src="nv3.jpg" alt="Camioneta Nv3" />
+    </div>
   </section>
 
-  <section class="form-section">
-    <h2>Renta unidades </h2>
+  <section class="form-section" id="cotiza">
+    <h2>Solicita tu Cotización</h2>
     <form action="https://formsubmit.co/transvehi@gmail.com" method="POST">
       <label for="camioneta">Selecciona tu Camioneta:</label>
       <select id="camioneta" name="camioneta" required>
@@ -77,7 +171,7 @@
 
       <label for="salida">Lugar de Salida:</label>
       <input type="text" id="salida" name="salida" placeholder="Ej. CDMX, Toluca..." required>
-      
+
       <label for="telefono">Número telefónico:</label>
       <input type="tel" id="telefono" name="telefono" placeholder="Ej. 5512345678" required pattern="[0-9]{10}" title="Ingresa un número de 10 dígitos sin espacios ni símbolos">
 
