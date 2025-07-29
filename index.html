@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TransVehi - Renta de Transporte</title>
+  <title>Transporte de Personal - Transvehi</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #f1f9ff, #dff1ff);
+      background: #f1f1f1;
     }
 
     header {
@@ -24,32 +23,35 @@
     }
 
     .contact-info span {
-      margin-right: 20px;
+      margin-right: 15px;
+      font-size: 14px;
     }
 
     .btn-cotiza {
-      background-color: white;
+      background-color: #fff;
       color: #007bff;
       border: none;
       padding: 10px 20px;
       border-radius: 8px;
-      cursor: pointer;
       font-weight: bold;
+      cursor: pointer;
     }
 
     .hero {
       text-align: center;
-      padding: 50px 20px;
+      padding: 40px 20px;
+      background: linear-gradient(to right, #2980b9, #6dd5fa);
+      color: white;
     }
 
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: 36px;
       margin-bottom: 10px;
     }
 
     .hero p {
-      font-size: 1.2rem;
-      color: #555;
+      font-size: 18px;
+      margin-bottom: 30px;
     }
 
     .imagenes-camionetas {
@@ -57,14 +59,14 @@
       gap: 20px;
       justify-content: center;
       flex-wrap: wrap;
-      padding: 20px;
     }
 
     .imagenes-camionetas img {
       max-width: 300px;
       width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
       cursor: pointer;
     }
@@ -74,40 +76,43 @@
     }
 
     .form-section {
-      padding: 40px 20px;
-      background-color: #ffffff;
-      text-align: center;
+      background: white;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.05);
     }
 
     .form-section h2 {
+      text-align: center;
       color: #007bff;
       margin-bottom: 20px;
     }
 
-    form {
-      max-width: 500px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
     label {
-      text-align: left;
+      display: block;
+      margin-top: 15px;
       font-weight: 500;
     }
 
-    input, select, button {
-      padding: 12px;
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
       border-radius: 8px;
       border: 1px solid #ccc;
-      font-size: 16px;
     }
 
     button[type="submit"] {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
       background-color: #007bff;
       color: white;
       border: none;
+      border-radius: 8px;
+      font-size: 16px;
       cursor: pointer;
     }
 
@@ -115,26 +120,34 @@
       background-color: #0056b3;
     }
 
+    .mensaje-final {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+    }
+
     .whatsapp {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: #25D366;
+      background: #25D366;
       color: white;
-      padding: 15px 20px;
-      border-radius: 50px;
+      padding: 12px 18px;
+      border-radius: 30px;
       text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      font-size: 16px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     }
 
     @media (max-width: 600px) {
       .hero h1 {
-        font-size: 2rem;
+        font-size: 28px;
       }
 
-      .imagenes-camionetas img {
-        max-width: 90vw;
+      .imagenes-camionetas {
+        flex-direction: column;
+        align-items: center;
       }
     }
   </style>
@@ -144,14 +157,14 @@
   <header>
     <div class="contact-info">
       <span>📧 transvehi@gmail.com</span>
-      <span>📞 55 4498 5161</span>
+      <span>📞 55 4498 5161 </span>
     </div>
-    <a href="#cotiza" class="btn-cotiza">🚐 COTIZA TU VIAJE</a>
+    <button class="btn-cotiza" onclick="document.getElementById('cotizar').scrollIntoView({ behavior: 'smooth' });">🚐 COTIZA TU VIAJE</button>
   </header>
 
   <section class="hero">
-    <h1>Transporte de Personal</h1>
-    <p>Viaja con confianza, seguridad y comodidad en cada trayecto.</p>
+    <h1>Transporte de personal</h1>
+    <p>Disfruta de un viaje sin preocupaciones con nuestros choferes profesionales y camionetas cómodas.</p>
     <div class="imagenes-camionetas">
       <img src="nv1.jpg" alt="Camioneta Nv1" />
       <img src="nv2.jpg" alt="Camioneta Nv2" />
@@ -159,23 +172,30 @@
     </div>
   </section>
 
-  <section class="form-section" id="cotiza">
-    <h2>Solicita tu Cotización</h2>
+  <section class="form-section" id="cotizar">
+    <h2>Renta una unidad</h2>
     <form action="https://formsubmit.co/transvehi@gmail.com" method="POST">
+
       <label for="camioneta">Selecciona tu Camioneta:</label>
-      <select id="camioneta" name="camioneta" required>
+      <select id="camioneta" name="Camioneta" required>
         <option value="" disabled selected>Por favor, selecciona</option>
         <option value="NV 350">Nissan Nv equipada y amplia (17 pax)</option>
         <option value="hiace">Toyota Hiace</option>
       </select>
 
       <label for="salida">Lugar de Salida:</label>
-      <input type="text" id="salida" name="salida" placeholder="Ej. CDMX, Toluca..." required>
-
+      <input type="text" id="salida" name="Lugar de salida" placeholder="Ej. CDMX, Toluca..." required>
+      
       <label for="telefono">Número telefónico:</label>
-      <input type="tel" id="telefono" name="telefono" placeholder="Ej. 5512345678" required pattern="[0-9]{10}" title="Ingresa un número de 10 dígitos sin espacios ni símbolos">
+      <input type="tel" id="telefono" name="Teléfono" placeholder="Ej. 5512345678" required pattern="[0-9]{10}" title="Ingresa un número de 10 dígitos sin espacios ni símbolos">
+
+      <!-- Sin CAPTCHA, sin redirección -->
+      <input type="hidden" name="_captcha" value="false">
 
       <button type="submit">Cotizar</button>
+      <div class="mensaje-final">
+        En un momento te llegará tu cotización, por favor mantente pendiente.
+      </div>
     </form>
   </section>
 
