@@ -123,8 +123,14 @@
     .mensaje-final {
       margin-top: 20px;
       text-align: center;
-      font-size: 14px;
-      color: #555;
+      font-size: 16px;
+      color: #007bff;
+      font-weight: 500;
+      background-color: #e6f0ff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
+      display: none; /* Oculto por defecto */
     }
 
     .whatsapp {
@@ -174,7 +180,7 @@
 
   <section class="form-section" id="cotizar">
     <h2>Renta una unidad</h2>
-    <form action="https://formsubmit.co/transvehi@gmail.com" method="POST">
+    <form action="https://formsubmit.co/ajax/transvehi@gmail.com" method="POST" id="formulario">
 
       <label for="camioneta">Selecciona tu Camioneta:</label>
       <select id="camioneta" name="Camioneta" required>
@@ -193,13 +199,44 @@
       <input type="hidden" name="_captcha" value="false">
 
       <button type="submit">Cotizar</button>
-      <div class="mensaje-final">
-        En un momento te llegará tu cotización, por favor mantente pendiente.
+
+      <div class="mensaje-final" id="mensajeFinal">
+        ✅ ¡Gracias por tu solicitud!<br>
+        📩 En breve recibirás tu cotización en el correo o número proporcionado.<br>
+        ⏳ Por favor mantente pendiente. ¡Estamos trabajando en ello!
       </div>
     </form>
   </section>
 
   <a href="https://wa.me/5544985161" class="whatsapp" target="_blank">💬 WhatsApp</a>
+
+  <script>
+    document.getElementById("formulario").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const data = new FormData(form);
+
+      fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          document.getElementById("mensajeFinal").style.display = "block";
+          form.reset();
+        } else {
+          alert("Hubo un problema al enviar el formulario. Intenta más tarde.");
+        }
+      })
+      .catch(() => {
+        alert("Error al enviar. Intenta de nuevo.");
+      });
+    });
+  </script>
 
 </body>
 </html>
